@@ -8,8 +8,8 @@ dogsRouter.get('/',async (req,res)=>{
         const breeds=   await getBreedsAll();
             if (name){
                 const race= breeds.filter(breed=>breed.name.toLowerCase().includes(name.toLowerCase()));      //Si la ruta dog ademas tiene un query name filtra por nombre de la raza
-                if ( race.length===0){{res.status(400).json({msg: 'La raza ingresada no existe'})}};
-                res.json( race);
+                if ( race.length===0){{res.status(400).json({msg: 'La raza ingresada no existe'})}}
+                else res.json( race);
             }
             res.json( breeds);}     //Si no responde con el listado de razas
                                           

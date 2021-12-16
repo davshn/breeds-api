@@ -3,8 +3,7 @@ const { Dog,Temperament } = require('./db');
 
 const getBreedsApi = async()=>{                                 //Trae las razas de la api
     try{
-        const apiInfo = await axios.get('https://api.thedogapi.com/v1/breeds',{
-            headers:{'x-api-key':`006605a5f-6757-4526-b72c-ff707727c6d5`}});
+        const apiInfo = await axios.get('https://api.thedogapi.com/v1/breeds');
         const breedsInfo= apiInfo.data.map((element)=>{
             return {
                 id:element.id,
